@@ -5,6 +5,7 @@
 		
 <meta name="viewport" content="width=device-width,user-scalable=no">
 <!--嘿嘿，禁止缩放-->
+<link rel="apple-touch-icon-precomposed" href="./jscss/1.png">
 <meta name="format-detection" content="telephone=no">
 <title>小友特别出品</title>
 
@@ -17,7 +18,7 @@ body {
 	font-size: 25px;
 	color: ivory;
 	font-family: "微软雅黑";
-	background: greenyellow;
+	/* background: greenyellow; */
 }
 
 div {
@@ -67,10 +68,9 @@ div {
 
 $(document).ready(function(e) {
 	$(document).scrollTop(100); /*移动滚动条到最下方*/
-	timer=setInterval("$.change()",4000);
+	timer=setInterval("$.change()",6000);
 	t=1;
 	$("#t-"+t).fadeIn();
-	
 	$(document).click(
 	function(){
 		/*如果用户点击了，就取消自动播放*/
@@ -84,7 +84,7 @@ $(document).ready(function(e) {
 		t++;
 		if(t<=$(".tittle").length){
 		$(".tittle").slideUp(1500).fadeOut();
-		$("#t-"+t).slideDown(4000).fadeIn();
+		$("#t-"+t).slideDown(1500).fadeIn();
 		}else{
 			localStorage["index"]="1";
 			window.location="second.html";
@@ -97,18 +97,17 @@ $(document).ready(function(e) {
 
 <body>
 	<center>
-		<div class="tittle" id="t-1" style="display: none;">
-			<table width="100%" border="0" height="100%">
-				<tbody><tr>
-					<td align="center"> <span class="big">系统</span>正在初始化</td>
-				</tr>
-			</tbody></table>
-		</div>
-
 		<div class="tittle" id="t-2" style="display: block;">
 			<table width="100%" border="0" height="100%">
 				<tbody><tr>
-					<td align="center"><span class="big">如果你看到这条信息，说明你已经点开了这个网页</span></td>
+					<td align="center"><span class="big"></span>花开花落花无悔,缘来缘去缘似水</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="tittle" id="t-1" style="">
+			<table width="100%" border="0" height="100%">
+				<tbody><tr>
+					<td align="center"><span class="big"></span>系统正在初始化</td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -116,7 +115,7 @@ $(document).ready(function(e) {
 		<div class="tittle" id="t-3" style="">
 			<table width="100%" border="0" height="100%">
 				<tbody><tr>
-					<td align="center">嗨,你好呀<span class="big"></span>很高兴认识你</td>
+					<td align="center">嗨,你好呀<span class="big"></span>很高兴认识你,我的朋友</td>
 				</tr>
 			</tbody></table>
 		</div>
@@ -125,7 +124,7 @@ $(document).ready(function(e) {
 	<div class="tittle" id="t-4" style="">
 		<table width="100%" border="0" height="100%">
 			<tbody><tr>
-				<td align="center"><br><span其实我 class="big"></span其实我>其实我有点不知所措</td>
+				<td align="center"><br><span其实我 class="big"></span其实我>其实有点不知所措</td>
 			</tr>
 		</tbody></table>
 	</div>
@@ -133,14 +132,18 @@ $(document).ready(function(e) {
 	<div class="tittle" id="t-5" style="">
 		<table width="100%" border="0" height="100%">
 			<tbody><tr>
-				<td align="center"><br>下面是我对你的一些内容<span class="big"></span></td>
+				<td align="center"><br>下面是我对你的说一些内容,写给我亲爱的朋友<span class="big"></span></td>
 			</tr>
 		</tbody></table>
 	</div>
 	<div align="center" class="tishi">
 		<span class="tishiContent">轻触屏幕继续</span>
 	</div>
- 
- <audio src="./mp3/姜创钢琴 - 夏洛特烦恼  杨宗纬《一次就好》--姜创钢琴版.mp3" autoplay="autoplay"></audio>
+	<audio id="music" src="https://www.ihaoge.net/server/1/310091947.mp3" controls="controls"></audio>
 	</body>
+	<script>
+		  let m = document.getElementById('music');
+		  m.play()
+	</script>
+	
 </html>
